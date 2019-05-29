@@ -1,0 +1,19 @@
+{
+  "name": "vue-spa-template",
+  "version": "0.0.1",
+  "description": "A vue.js template for single-page application",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackie-gan/vue-spa-template.git"
+  },
+  "author": "jackie-gan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackie-gan/vue-spa-template/issues"
+  },
+  "homepage": "https://github.com/jackie-gan/vue-spa-template#readme"
+}
