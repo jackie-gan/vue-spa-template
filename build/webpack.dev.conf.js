@@ -8,7 +8,7 @@ module.exports = webpackMerge(baseConfig, {
     path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].debug.js',
     chunkFilename: 'js/[id].debug.js',
-    publicPath: '/js/'
+    publicPath: ''
   },
   plugins: [
     new HtmlWebpackPlugin({

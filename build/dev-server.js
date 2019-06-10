@@ -6,11 +6,15 @@ const opn = require('opn');
 const compiler = webpack(webpackConfig);
 
 const devServerConfig = {
-  publicPath
-};
-
-const server = new webpackDevServer(compiler, {
   publicPath: '',
   hot: true,
   disableHostCheck: true
+};
+
+const server = new webpackDevServer(compiler, devServerConfig);
+
+const uri = 'http://localhost:3000';
+
+server.listen(3000, '0.0.0.0', () => {
+  opn(uri);
 });

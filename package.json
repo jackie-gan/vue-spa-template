@@ -4,7 +4,7 @@
   "description": "A vue.js template for single-page application",
   "private": true,
   "scripts": {
-    "dev": "",
+    "dev": "node ./build/dev-server.js",
     "build": "node ./build/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
