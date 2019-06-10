@@ -4,6 +4,8 @@
   "description": "A vue.js template for single-page application",
   "private": true,
   "scripts": {
+    "dev": "",
+    "build": "node ./build/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,8 +18,11 @@
     "url": "https://github.com/jackie-gan/vue-spa-template/issues"
   },
   "homepage": "https://github.com/jackie-gan/vue-spa-template#readme",
-  "dependencies": {
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "opn": "^6.0.0",
     "webpack": "^4.32.2",
-    "webpack-dev-server": "^3.5.1"
+    "webpack-dev-server": "^3.7.1",
+    "webpack-merge": "^4.2.1"
   }
 }
