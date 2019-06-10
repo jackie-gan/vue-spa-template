@@ -8,7 +8,14 @@ const compiler = webpack(webpackConfig);
 const devServerConfig = {
   publicPath: '',
   hot: true,
-  disableHostCheck: true
+  disableHostCheck: true,
+  stats: {
+    colors: true,
+    modules: false,
+    children: false,
+    chunks: false,
+    chunkModules: false
+  }
 };
 
 const server = new webpackDevServer(compiler, devServerConfig);
