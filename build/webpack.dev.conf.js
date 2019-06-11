@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = webpackMerge(baseConfig, {
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].debug.js',

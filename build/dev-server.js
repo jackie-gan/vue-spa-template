@@ -5,7 +5,7 @@ const opn = require('opn');
 
 const compiler = webpack(webpackConfig);
 
-const devServerConfig = {
+const server = new webpackDevServer(compiler, {
   publicPath: '',
   hot: true,
   disableHostCheck: true,
@@ -16,9 +16,7 @@ const devServerConfig = {
     chunks: false,
     chunkModules: false
   }
-};
-
-const server = new webpackDevServer(compiler, devServerConfig);
+});
 
 const uri = 'http://localhost:3000';
 
