@@ -1,16 +1,13 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   parserOptions: {
-    sourceType: 'module'
+    parser: 'babel-eslint'
   },
   env: {
-    browser: true,
-    es6: true
+    browser: true
   },
-  extends: 'airbnb-base',
+  extends: ['plugin:vue/essential', 'airbnb-base'],
   plugins: [
-    'html',
     'prefer-object-spread'
   ],
   // check if imports actually resolve
@@ -21,4 +18,12 @@ module.exports = {
       }
     }
   },
+  rules: {
+    "import/no-unresolved":"off",
+    "comma-dangle": ["error", "only-multiline"],
+    // allow debugger during development
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    // allow console during development
+    "no-console": process.env.NODE_ENV === "production" ? "error" : "off"
+  }
 };
