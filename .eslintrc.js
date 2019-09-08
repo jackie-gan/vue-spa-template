@@ -19,7 +19,9 @@ module.exports = {
     }
   },
   rules: {
-    "import/no-unresolved":"off",
+    "import/no-unresolved": "off",
+    "import/no-dynamic-require": "off",
+    "global-require": "off",
     "comma-dangle": ["error", "only-multiline"],
     // allow debugger during development
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",

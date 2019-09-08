@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const webpackDevServer = require('webpack-dev-server');
 const opn = require('opn');
 
+process.env.NODE_ENV = 'development';
+
 const compiler = webpack(webpackConfig);
 
 const server = new webpackDevServer(compiler, {
