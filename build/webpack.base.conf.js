@@ -1,5 +1,5 @@
 const path = require('path');
-const { cssLoaders } = require('./style');
+const vueLoaderConfig = require('./vue-loader.config');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -32,12 +32,7 @@ module.exports = {
         test: /\.(vue)$/,
         loader: 'vue-loader',
         include: loaderInclude,
-        options: {
-          loaders: cssLoaders({
-            sourceMap: false,
-            extract: true
-          })
-        }
+        options: vueLoaderConfig
       }
     ]
   }
