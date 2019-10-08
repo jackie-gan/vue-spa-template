@@ -1,6 +1,6 @@
 export default [{
   path: '/todo/index',
-  component: require('./index'),
+  component: () => import('./index'),
   meta: {
     title: 'todo'
   }

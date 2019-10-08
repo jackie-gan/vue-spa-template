@@ -1,6 +1,6 @@
 export default [{
   path: '/index/index',
-  component: require('./index'),
+  component: () => import('./index'),
   meta: {
     title: 'spa-index'
   }

@@ -3,11 +3,12 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-let routers = [];
+let routes = [];
 
 [
-  'index'
+  'index',
+  'todo'
 /* eslint-disable no-return-assign */
-].forEach(m => routers = routers.concat(require(`./pages/${m}/router`).default));
+].forEach(m => routes = routes.concat(require(`./pages/${m}/router`).default));
 
-export default new VueRouter({ routers });
+export default new VueRouter({ routes });
