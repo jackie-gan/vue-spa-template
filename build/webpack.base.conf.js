@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const vueLoaderConfig = require('./vue-loader.config');
 
 function resolve(dir) {
@@ -13,7 +14,11 @@ const loaderExclude = []
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: ['./src/main.js'],
+    vendor: [
+      'vue',
+      'vue-router'
+    ]
   },
   resolve: {
     extensions: ['.js', '.vue', '.json', 'scss']
@@ -43,5 +48,7 @@ module.exports = {
         exclude: loaderExclude
       }
     ]
-  }
+  },
+  plugins: [
+  ]
 };

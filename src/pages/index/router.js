@@ -1,5 +1,5 @@
 export default [{
-  path: '/index/index',
+  path: '/',
   component: () => import('./index'),
   meta: {
     title: 'spa-index'

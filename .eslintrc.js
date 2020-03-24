@@ -20,6 +20,7 @@ module.exports = {
   },
   rules: {
     "import/no-unresolved": "off",
+    "import/extensions":"off",
     "import/no-dynamic-require": "off",
     "global-require": "off",
     "comma-dangle": ["error", "only-multiline"],
