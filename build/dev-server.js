@@ -7,6 +7,11 @@ process.env.NODE_ENV = 'development';
 
 const compiler = webpack(webpackConfig);
 
+let _resolve;
+const readyPromise = new Promise((resolve) => {
+  _resolve = resolve;
+});
+
 const server = new webpackDevServer(compiler, {
   publicPath: '',
   hot: true,
@@ -24,4 +29,13 @@ const uri = 'http://localhost:3000';
 
 server.listen(3000, '0.0.0.0', () => {
   opn(uri);
+
+  _resolve();
 });
+
+module.exports = {
+  ready: readyPromise,
+  close: () => {
+    server.close();
+  }
+};
