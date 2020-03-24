@@ -9,6 +9,8 @@ const loaderInclude = [
   resolve('src')
 ];
 
+const loaderExclude = []
+
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -33,6 +35,12 @@ module.exports = {
         loader: 'vue-loader',
         include: loaderInclude,
         options: vueLoaderConfig
+      },
+      {
+        test: /\.(js)$/,
+        loader: 'babel-loader',
+        include: loaderInclude,
+        exclude: loaderExclude
       }
     ]
   }

@@ -2,6 +2,7 @@ const baseConfig = require('./webpack.base.conf');
 const webpackMerge = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const style = require('./style');
 
 module.exports = webpackMerge(baseConfig, {
   mode: 'development',
@@ -10,6 +11,11 @@ module.exports = webpackMerge(baseConfig, {
     filename: 'js/[name].debug.js',
     chunkFilename: 'js/[id].debug.js',
     publicPath: ''
+  },
+  module: {
+    rules: style.styleLoaders({
+      sourcemap: false
+    })
   },
   plugins: [
     new HtmlWebpackPlugin({

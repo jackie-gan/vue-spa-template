@@ -2,6 +2,7 @@ const baseConfig = require('./webpack.base.conf');
 const webpackMerge = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const style = require('./style');
 
 module.exports = webpackMerge(baseConfig, {
   mode: 'production',
@@ -10,6 +11,12 @@ module.exports = webpackMerge(baseConfig, {
     filename: 'js/[name].[chunkhash:8].js',
     chunkFilename: 'js/[id].[chunkhash:8].js',
     publicPath: ''
+  },
+  module: {
+    rules: style.styleLoaders({
+      sourcemap: false,
+      extract: true
+    })
   },
   plugins: [
     new HtmlWebpackPlugin({

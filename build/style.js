@@ -8,14 +8,14 @@ exports.cssLoaders = function(options) {
     options: {
       sourceMap: options.sourceMap
     }
-  }
+  };
 
   const postcssLoader = {
     loader: 'postcss-loader',
     options: {
       sourceMap: options.sourceMap
     }
-  }
+  };
 
   function generateLoaders(loader, loaderOptions) {
     const loaders = [cssLoader];
@@ -36,14 +36,26 @@ exports.cssLoaders = function(options) {
         use: loaders,
         fallback: 'vue-style-loader'
       })
-    } else {
-      return ['vue-style-loader'].concat(loaders)
     }
+    return ['vue-style-loader'].concat(loaders);
   }
 
   return {
     css: generateLoaders(),
     sass: generateLoaders('sass'),
     scss: generateLoaders('sass')
+  };
+};
+
+exports.styleLoaders = function(options) {
+  const output = [];
+  const loaders = exports.cssLoaders(options);
+  for (let extension in loaders) {
+    const loader = loaders[extension];
+    output.push({
+      test: new RegExp(`\\.${extension}$`),
+      use: loader
+    });
   }
-}
+  return output;
+};
