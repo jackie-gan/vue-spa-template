@@ -17,7 +17,8 @@ module.exports = {
     app: ['./src/main.js'],
     vendor: [
       'vue',
-      'vue-router'
+      'vue-router',
+      'vuex'
     ]
   },
   resolve: {
