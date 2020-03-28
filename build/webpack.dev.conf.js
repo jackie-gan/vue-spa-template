@@ -10,7 +10,24 @@ module.exports = webpackMerge(baseConfig, {
     path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].debug.js',
     chunkFilename: 'js/[id].debug.js',
-    publicPath: ''
+    publicPath: '/'
+  },
+  devtool: 'eval-source-map',
+  devServer: {
+    hot: true,
+    publicPath: '/',
+    disableHostCheck: true,
+    quiet: false,
+    host: '0.0.0.0',
+    port: 3000,
+    open: true,
+    stats: {
+      colors: true,
+      modules: false,
+      children: false,
+      chunks: false,
+      chunkModules: false
+    }
   },
   module: {
     rules: style.styleLoaders({
