@@ -22,6 +22,7 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/extensions":"off",
     "import/no-dynamic-require": "off",
+    "no-param-reassign": ["error", { "props": false }],
     "global-require": "off",
     "comma-dangle": ["error", "only-multiline"],
     // allow debugger during development
