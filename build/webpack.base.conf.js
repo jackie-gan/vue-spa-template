@@ -12,14 +12,9 @@ const loaderInclude = [
 
 const loaderExclude = []
 
-module.exports = {
+const config = {
   entry: {
-    app: ['./src/main.js'],
-    vendor: [
-      'vue',
-      'vue-router',
-      'vuex'
-    ]
+    app: './src/main.js',
   },
   resolve: {
     extensions: ['.js', '.vue', '.json', 'scss']
@@ -51,13 +46,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'mainifest',
-      chunks: ['vendor']
-    })
   ]
 };
+
+module.exports = config;
