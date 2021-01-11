@@ -38,10 +38,9 @@ const config = {
         options: vueLoaderConfig
       },
       {
-        test: /\.(js)$/,
+        test: /\.js$/,
         loader: 'babel-loader',
         include: loaderInclude,
-        exclude: loaderExclude
       }
     ]
   },
