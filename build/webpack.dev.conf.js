@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const style = require('./style');
+const config = require('../config/index');
 
 module.exports = webpackMerge(baseConfig, {
   mode: 'development',
@@ -13,7 +14,7 @@ module.exports = webpackMerge(baseConfig, {
     chunkFilename: 'js/[id].debug.js',
     publicPath: '/'
   },
-  devtool: 'eval-source-map',
+  devtool: config.dev.devtool,
   devServer: {
     hot: true,
     publicPath: '/',

@@ -17,7 +17,10 @@ const config = {
     app: './src/main.js',
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', 'scss']
+    extensions: ['.js', '.vue', '.json', 'scss'],
+    alias: {
+      '@': resolve('src')
+    }
   },
   module: {
     rules: [
