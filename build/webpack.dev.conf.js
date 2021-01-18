@@ -6,8 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const style = require('./style');
 
 module.exports = webpackMerge(baseConfig, {
+  mode: 'development',
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '..', 'dist'),
     filename: 'js/[name].debug.js',
     chunkFilename: 'js/[id].debug.js',
     publicPath: '/'
