@@ -15,22 +15,6 @@ module.exports = webpackMerge(baseConfig, {
     publicPath: '/'
   },
   devtool: config.dev.devtool,
-  devServer: {
-    hot: true,
-    publicPath: '/',
-    disableHostCheck: true,
-    quiet: false,
-    host: '127.0.0.1',
-    port: 3000,
-    open: true,
-    stats: {
-      colors: true,
-      modules: false,
-      children: false,
-      chunks: false,
-      chunkModules: false
-    }
-  },
   module: {
     rules: style.styleLoaders({
       sourcemap: false

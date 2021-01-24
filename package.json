@@ -4,7 +4,7 @@
   "description": "A vue.js template for single-page application",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
+    "dev": "node ./build/dev.js",
     "build": "rm -rf dist & node ./build/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -45,7 +45,7 @@
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.45.0",
-    "webpack-dev-server": "^2.11.5",
+    "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
