@@ -25,16 +25,6 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js|vue)$/,
-        exclude: /node_modules/,
-        include: loaderInclude,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        options: {
-          formatter: require("eslint-friendly-formatter")
-        }
-      },
-      {
         test: /\.(vue)$/,
         loader: 'vue-loader',
         include: loaderInclude,
