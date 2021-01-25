@@ -1,6 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const vueLoaderConfig = require('./vue-loader.config');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -48,6 +48,7 @@ const config = {
     ]
   },
   plugins: [
+    new ESLintWebpackPlugin()
   ]
 };
 

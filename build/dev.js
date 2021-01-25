@@ -26,7 +26,7 @@ const compiler = webpack(webpackConfig);
 const server = new WebpackDevServer(compiler, devServerConfig);
 
 module.exports = new Promise((resolve, reject) => {
-    console.log(`staring at prot: ${config.dev.port}`);
+    console.log(`staring at port: ${config.dev.port}`);
     server.listen(config.dev.port, (error) => {
         if (error) {
             reject(error);
