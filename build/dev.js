@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.dev.conf');
 const config = require('../config/index');
 
+process.env.NODE_ENV = 'development';
+
 const devServerConfig = {
     hot: true,
     publicPath: '/',
