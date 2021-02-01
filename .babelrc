@@ -1,7 +1,11 @@
+// 执行顺序：
+// 1、plugins会在preset前执行
+// 2、plugins会从靠前声明的往后执行
+// 3、presets会从靠后声明的往前执行
 {
   "presets": [
     ["@babel/preset-env", {
-      "modules": false,
+      "modules": false, // webpack treeshaking
       "targets": {
         "browsers": ["iOS >= 7", "Android >= 4"]
       }

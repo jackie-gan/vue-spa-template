@@ -24,6 +24,9 @@ const config = {
   },
   module: {
     rules: [
+      // 当使用use的时候，loader的执行顺序为从后往前，例如：
+      // use: ['style-loader', 'css-loader', 'sass-loader']
+      // 最先执行的是sass-loader
       {
         test: /\.(vue)$/,
         loader: 'vue-loader',

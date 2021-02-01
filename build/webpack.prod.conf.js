@@ -2,7 +2,7 @@ const baseConfig = require('./webpack.base.conf');
 const webpackMerge = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const style = require('./style');
+const style = require('./style-rules');
 const config = require('../config/index');
 
 module.exports = webpackMerge(baseConfig, {
@@ -16,7 +16,7 @@ module.exports = webpackMerge(baseConfig, {
   devtool: config.build.needSourceMap ? config.build.devtool : 'none',
   module: {
     rules: style.styleLoaders({
-      sourcemap: false,
+      sourcemap: true,
       extract: true
     })
   },

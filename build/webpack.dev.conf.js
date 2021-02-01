@@ -3,7 +3,7 @@ const webpackMerge = require('webpack-merge');
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const style = require('./style');
+const style = require('./style-rules');
 const config = require('../config/index');
 
 module.exports = webpackMerge(baseConfig, {

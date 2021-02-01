@@ -1,4 +1,4 @@
-const { cssLoaders } = require('./style');
+const { cssLoaders } = require('./style-rules');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
