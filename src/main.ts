@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import BeginApp from './BeginApp';
+import BeginApp from './BeginApp.vue';
 import router from './router';
 import store from './store';
 

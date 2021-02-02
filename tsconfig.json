@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "ES2015",
+        "moduleResolution": "Node",
+        "baseUrl": ".",
+        "target": "ES2015",
+        "allowJs": true,
+        "sourceMap": true,
+        "experimentalDecorators": true
+    },
+    "include": [
+        "./src/**/*"
+    ],
+}

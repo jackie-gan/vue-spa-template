@@ -1,6 +1,7 @@
 const path = require('path');
-const vueLoaderConfig = require('./vue-loader.config');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+const vueLoaderConfig = require('./vue-loader.config');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -14,10 +15,10 @@ const loaderExclude = []
 
 const config = {
   entry: {
-    app: './src/main.js',
+    app: './src/main.ts',
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', 'scss'],
+    extensions: ['.ts', '.js', '.vue', '.json', 'scss'],
     alias: {
       '@': resolve('src')
     }
@@ -28,10 +29,15 @@ const config = {
       // use: ['style-loader', 'css-loader', 'sass-loader']
       // 最先执行的是sass-loader
       {
-        test: /\.(vue)$/,
+        test: /\.vue$/,
         loader: 'vue-loader',
         include: loaderInclude,
         options: vueLoaderConfig
+      },
+      {
+        test: /\.ts$/,
+        include: loaderInclude,
+        use: ['babel-loader', 'ts-loader']
       },
       {
         test: /\.js$/,
@@ -41,6 +47,7 @@ const config = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new ESLintWebpackPlugin()
   ]
 };
